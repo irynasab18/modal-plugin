@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modal default MVC</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Создание уже и не такого простого модального окошка!</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequunturab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequunturab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga sunt voluptas, ullam, sed consequunturab
+            illo veniam ad totam alias voluptatibus sequi officiis, unde autem reiciendis magnam labore voluptatum?
+        </p>
+        <p class="btn"><a href="#" data-supermodal="form-modal" class="modal-open"
+                title="Покажите мне модальное окошко">Форма регистрации</a></p>
+        <p class="btn"><a href="#" data-supermodal="video-modal" class="modal-open"
+                title="Покажите мне модальное окошко">Просмотр видео</a></p>
+        <p class="btn"><a href="#" data-supermodal="attention-modal" class="modal-open"
+                title="Покажите мне модальное окошко">Внимание!</a></p>
+        <p class="btn"><a href="#" data-supermodal="important-modal" class="modal-open"
+                title="Покажите мне модальное окошко" data-supermodal-title="Заголовок подтянут из верстки"
+                data-supermodal-content="Контент тоже подтянут из верстки, невероятно!">Тут что-то
+                важное</a></p>
+        <p class="btn"><a href="#" data-supermodal="new-modal" class="modal-open" title="Покажите мне модальное окошко"
+                data-supermodal-title="Это окно сгенерировано автоматически"
+                data-supermodal-content="Это основной текст в окне, сгенерированном автоматически">Окно без верстки</a>
+        </p>
+        </p>
+
+        <div class="modal-data"></div>
+        <p class="btn"><a href="#" id="clear-data" class="clear-data" style="display: none;">Очистить данные</a></p>
+    </div>
+
+    <div class="modal-overlay modal_closed" id="modal-overlay"></div>
+
+    <div class="modal modal_closed" id="form-modal">
+        <header class="modal__header">
+            <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
+            <h2>Форма регистрации</h2>
+        </header>
+
+        <main class="modal__content">
+            <div class="form-field">
+                <label for="name">Ваше имя:</label>
+                <input required class="input__default" type="text" id="name" name="name">
+            </div>
+            <div class="form-field">
+                <label for="name">Ваш e-mail:</label>
+                <input required class="input__default" type="text" id="email" name="email">
+            </div>
+            <div class="form-field">
+                <label for="name">Ваш пароль:</label>
+                <input required class="input__default" type="text" id="pass1" name="pass1">
+            </div>
+            <div class="form-field">
+                <label for="name">Подтвердите пароль:</label>
+                <input required class="input__default" type="text" id="pass2" name="pass2">
+            </div>
+        </main>
+
+        <footer class="modal__footer">
+            <button id="modal-cancel" class="modal__cancel" title="Отмена">Отмена</button>
+            <button id="modal-save" class="modal__save" title="Регистрация">Регистрация</button>
+        </footer>
+    </div>
+
+    <div class="modal video modal_closed" id="video-modal">
+        <header class="modal__header">
+            <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
+            <h2>Очень интересное видео</h2>
+        </header>
+
+        <main class="modal__content">
+            <iframe src="https://www.youtube.com/embed/377qAu37OTE" width="560" height="315" frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </main>
+
+        <footer class="modal__footer">
+            <button id="modal-cancel" class="modal__cancel" title="Закрыть">Закрыть</button>
+        </footer>
+    </div>
+
+    <div class="modal modal_closed" id="attention-modal">
+        <header class="modal__header">
+            <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
+            <h2>Внимание!</h2>
+        </header>
+
+        <main class="modal__content">
+            <p>Спасибо за внимание</p>
+        </main>
+
+        <footer class="modal__footer">
+            <button id="modal-cancel" class="modal__cancel" title="Закрыть">Закрыть</button>
+        </footer>
+    </div>
+
+    <div class="modal modal_closed" id="important-modal">
+        <header class="modal__header">
+            <a href="#" class="modal__close" id="modal-close" title="Закрыть модальное окно">Закрыть</a>
+            <h2></h2>
+        </header>
+        <main class="modal__content"></main>
+        <footer class="modal__footer">
+            <button id="modal-cancel" class="modal__cancel" title="Закрыть">Закрыть</button>
+        </footer>
+    </div>
+</body>
+<script type="module">
+    import { App } from './plugin.js';
+    const app = new App(document.body);
+    app.init();
+</script>
+
+</html>
